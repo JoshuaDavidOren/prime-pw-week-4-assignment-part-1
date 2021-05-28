@@ -18,7 +18,7 @@ function helloName( name ) {
   return 'Hello, Joshua';
 }
 // Remember to call the function to test
-console.log('Test - should say "Hello, Joshua",', helloName() );
+console.log('Test - should say "Hello, Joshua"', helloName() );
 
 // 3. Function to add two numbers together & return the result
 function addNumbers( firstNumber, secondNumber ) {
@@ -62,7 +62,7 @@ console.log( 'isPositive - should say false', isPositive(16 * -1) );
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
 function getLast( array ) {
-  let lastItem = array.length-1
+  let lastItem = array.length-1;
   return array[lastItem];
 }
 console.log(getLast(['bird', 'cat', 'dog', 'bunny']));
@@ -73,9 +73,17 @@ console.log(getLast(['bird', 'cat', 'dog']));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
-
+  for(const search of array){
+    if(search === value){
+      return true;
+    }
+  }
+  return false;
 }
 
+console.log(find('spider pig',['cat','dog','pig']));
+console.log(find('spider pig',['spider pig', 'bird', 'cat']))
+console.log(find('spider pig',['cat','dog','pig','spider pig']));
 // ----------------------
 // Stretch Goals
 // ----------------------
